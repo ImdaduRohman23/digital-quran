@@ -1,0 +1,49 @@
+.listSurats {
+    padding-top: 20px;
+    background-color: #2988bc;
+}
+
+.listSurats__items {
+    margin-bottom: 200px;
+    justify-content: center;
+}
+
+.listSurats__item h2 {
+    font-size: 20px;
+}
+
+.listSurats__item {
+    display: flex;
+    align-items: center;
+    margin: 15px 10px;
+    color: #f4eade;
+    /* color: #2988bc; */
+    /* box-shadow: 0px 0px 10px #2f496e; */
+    /* box-shadow: 0px 0px 10px #ed8c72; */
+    border-radius: 8px;
+    gap: 10px;
+    padding: 15px;
+    background-color: aliceblue;
+    background-color: #ed8c72;
+}
+
+/* .item__no {
+    background-color: brown;
+} */
+
+.item__name {
+    /* display: flex;
+    flex-direction: column; */
+    border-left: 0.1px solid grey;
+    width: 100%;
+    padding-left: 5px;
+}
+
+.item__name-arti {
+    font-size: 15px;
+}
+
+/* .item__arab {
+    align-self: flex-end;
+    font-size: 20px;
+} */
