@@ -4,10 +4,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './surats.css';
 import { Surats } from '../../context/DataSurats';
+import { useNavigate } from 'react-router-dom';
 
 const ListSurat = () => {
     const surats = useContext(Surats);
-    console.log('data', surats);
+    const navigate = useNavigate();
 
     function toArabicNumeral(en) {
         return ("" + en).replace(/[0-9]/g, function(t) {
@@ -15,6 +16,9 @@ const ListSurat = () => {
         });
     }
 
+    const handleSurat = (id) => {
+        navigate(`/${id}`);
+    };
 
     return (
         <div className="listSurats">
@@ -22,7 +26,7 @@ const ListSurat = () => {
                 <Row className='listSurats__items'>
                     {
                         surats.map(surat => (
-                            <Col md={4}>
+                            <Col key={surat.number} lg={4} onClick={() => handleSurat(surat.number)}>
                                 <div className='listSurats__items-item'>
                                     <h2>{surat.name}</h2>
                                     <h2 className='item__number'>.{toArabicNumeral(surat.number)}</h2>
