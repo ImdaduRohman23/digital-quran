@@ -1,0 +1,51 @@
+.surat {
+    padding-top: 70px;
+    background-color: #d4dde1;
+    /* background-color: #2f496e; */
+    /* color: #f4eade; */
+}
+
+.surat__name {
+    background-color: white;
+    padding: 15px 30px;
+    box-shadow: 0px 0px 4px #ed8c72;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.surat-container {
+    /* background-color: #2f496e; */
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+
+}
+
+.surat__name {
+    align-self: center;
+    margin-bottom: 30px;
+}
+
+.surat__items {
+    align-self: flex-end;
+    text-align: end;
+    width: 100%;
+}
+
+/* .surat__items h3 {
+
+} */
+
+.surat__items-item {
+    /* background-color: #2988bc; */
+    /* background-color: #ed8c72; */
+    background-color: white;
+    padding: 25px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    /* box-shadow: 0 0 4px #ed8c72; */
+    box-shadow: 0px 0px 4px #ed8c72;
+    border-radius: 8px;
+    /* color: #f4eade; */
+}
