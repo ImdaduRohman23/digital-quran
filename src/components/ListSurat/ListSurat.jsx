@@ -16,6 +16,8 @@ const ListSurat = () => {
         });
     }
 
+    console.log('diterima', surats)
+
     const handleSurat = (id) => {
         navigate(`/${id}`);
     };
@@ -26,224 +28,16 @@ const ListSurat = () => {
                 <Row className='listSurats__items'>
                     {
                         surats.map(surat => (
-                            <Col key={surat.number} lg={4} onClick={() => handleSurat(surat.number)}>
+                            <Col key={surat.nomor} lg={4} onClick={() => handleSurat(surat.nomor)}>
                                 <div className='listSurats__items-item'>
-                                    <h2>{surat.name}</h2>
-                                    <h2 className='item__number'>.{toArabicNumeral(surat.number)}</h2>
+                                    <h2 className='item__nama'>{surat.nomor}. {surat.nama_latin}</h2>
+                                    <h2 className='arab'>{surat.nama}</h2>
+                                    <h2 className='item__arti'>"{surat.arti}"</h2>
+                                    {/* <h2 className='item__number arab'>{toArabicNumeral(surat.nomor)})</h2> */}
                                 </div>
                             </Col>
                         ))
                     }
-                    {/* <Col md={4} >
-                        <div className='listSurats__item'>
-                            <h2 className='item__no'>1</h2>
-                            <div className="item__name">
-                                <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                <h4 className='item__name-arti'>Pembukaan</h4>
-                            </div>
-                            <h2 className='item__arab'>الفاتحة</h2>
-                        </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4} >
-                        <div className='listSurats__item'>
-                            <h2 className='item__no'>1</h2>
-                            <div className="item__name">
-                                <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                <h4 className='item__name-arti'>Pembukaan</h4>
-                            </div>
-                            <h2 className='item__arab'>الفاتحة</h2>
-                        </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4} >
-                        <div className='listSurats__item'>
-                            <h2 className='item__no'>1</h2>
-                            <div className="item__name">
-                                <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                <h4 className='item__name-arti'>Pembukaan</h4>
-                            </div>
-                            <h2 className='item__arab'>الفاتحة</h2>
-                        </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4} >
-                        <div className='listSurats__item'>
-                            <h2 className='item__no'>1</h2>
-                            <div className="item__name">
-                                <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                <h4 className='item__name-arti'>Pembukaan</h4>
-                            </div>
-                            <h2 className='item__arab'>الفاتحة</h2>
-                        </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4} >
-                        <div className='listSurats__item'>
-                            <h2 className='item__no'>1</h2>
-                            <div className="item__name">
-                                <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                <h4 className='item__name-arti'>Pembukaan</h4>
-                            </div>
-                            <h2 className='item__arab'>الفاتحة</h2>
-                        </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4} >
-                        <div className='listSurats__item'>
-                            <h2 className='item__no'>1</h2>
-                            <div className="item__name">
-                                <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                <h4 className='item__name-arti'>Pembukaan</h4>
-                            </div>
-                            <h2 className='item__arab'>الفاتحة</h2>
-                        </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4} >
-                        <div className='listSurats__item'>
-                            <h2 className='item__no'>1</h2>
-                            <div className="item__name">
-                                <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                <h4 className='item__name-arti'>Pembukaan</h4>
-                            </div>
-                            <h2 className='item__arab'>الفاتحة</h2>
-                        </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col>
-                    <Col md={4}>
-                        <div className='listSurats__item'>
-                                <h2 className='item__no'>1</h2>
-                                <div className="item__name">
-                                    <h2 className='item__name-latin'>Al-Fatihah(7)</h2>
-                                    <h4 className='item__name-arti'>Pembukaan</h4>
-                                </div>
-                                <h2 className='item__arab'>الفاتحة</h2>
-                            </div>
-                    </Col> */}
                 </Row>
             </Container>
         </div>

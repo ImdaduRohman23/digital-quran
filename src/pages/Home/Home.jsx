@@ -10,11 +10,6 @@ const Home = () => {
             <NavbarComp />
             <Header />
             <ListSurat />
-            <ol>
-                <li>ayam</li>
-                <li>sapi</li>
-                <li>kucing</li>
-            </ol>
         </div>
     )
 }

@@ -1,15 +1,15 @@
 .navbarComp {
     /* background-color: #2f496e; */
-    background-color: #2988bc;
+    /* background-color: #2988bc; */
+    background-color: white;
     position: fixed;
     width: 100%;
     top: 0;
     padding: 15px;
-    /* border-bottom: 5px solid blue; */
+    border-bottom: 5px solid black;
 }
 
 .navbarComp h1 {
-    color: #f4eade;
     font-weight: bold;
     /* text-shadow: 3px 3px 3px #ed8c72; */
 }

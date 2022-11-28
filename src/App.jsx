@@ -3,6 +3,7 @@ import './App.css';
 import DataSurats from './context/DataSurats';
 import Home from './pages/Home/Home';
 import Surat from './pages/Surat/Surat';
+import Terjemah from './pages/Terjemah/Terjemah';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/:id' element={<Surat />} />
+            <Route path='/terjemah' element={<Terjemah />} />
           </Routes>
         </DataSurats>
     </div>

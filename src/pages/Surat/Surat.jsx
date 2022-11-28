@@ -42,24 +42,19 @@ const Surat = (props) => {
             <Container>
                 <div className="surat-container">
                     <div className="surat__name">
-                        <h1>{surat.name}</h1>
+                        <h1 className='arab'>{surat.name}</h1>
                     </div>
                     <hr />
                     <div className="surat__items">
                     {
                         ayats.map(ayat => (
-                            <h3 className="surat__items-item">{ayat.text} ({toArabicNumeral(ayat.numberInSurah)})</h3>
+                            <h3 className="surat__items-item arab">{ayat.text} ({toArabicNumeral(ayat.juz)} : {toArabicNumeral(ayat.numberInSurah)})</h3>
                         ))
                     }
                     </div>
                 </div>
-
             </Container>
         </div>
-        // <div>
-        //     <h2>Surat</h2>
-
-        // </div>
     )
 }
 

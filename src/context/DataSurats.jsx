@@ -4,16 +4,18 @@ export const Surats = createContext();
 
 const DataSurats = ({children}) => {
     const [surats, setSurats] = useState([]);
-    const url_surats = 'http://api.alquran.cloud/v1/surah';
+    const url_surats = 'https://quran-api.santrikoding.com/api/surah';
 
     const getDataSurats = () => {
         axios.get(url_surats)
-            .then(res => setSurats(res.data.data))
+            .then(res => setSurats(res.data))
     };
 
     useEffect(() => {
         getDataSurats();
     }, []);
+
+    console.log('cek', surats)
 
     return (
         <Surats.Provider value={surats}>
