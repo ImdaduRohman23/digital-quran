@@ -3,21 +3,19 @@ import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import NavbarComp from '../../components/NavbarComp/NavbarComp';
-import { Surats } from '../../context/DataSurats';
 import './surat.css';
 
-const Surat = (props) => {
+const Surat = () => {
     const [surat, setSurat] = useState([]);
     const [ayats, setAyats] = useState([]);
     const {id} = useParams();
-
-    const url__surat = `http://api.alquran.cloud/v1/surah/${id}`;
+    const url__surat = `https://quran-api.santrikoding.com/api/surah/${id}`;
 
     const getDataSurat = () => {
         axios.get(url__surat)
             .then(res => {
-                setSurat(res.data.data);
-                setAyats(res.data.data.ayahs)
+                setSurat(res.data);
+                setAyats(res.data.ayat)
             })
             .catch(err => console.log(err))
     };
@@ -32,9 +30,6 @@ const Surat = (props) => {
             return "٠١٢٣٤٥٦٧٨٩".slice(+t, +t+1);
         });
     }
-
-    console.log(ayats)
-    console.log(surat)
     
     return (
         <div className="surat">
@@ -42,13 +37,17 @@ const Surat = (props) => {
             <Container>
                 <div className="surat-container">
                     <div className="surat__name">
-                        <h1 className='arab'>{surat.name}</h1>
+                        <h1 className='arab'>{surat.nama}</h1>
                     </div>
                     <hr />
                     <div className="surat__items">
                     {
                         ayats.map(ayat => (
-                            <h3 className="surat__items-item arab">{ayat.text} ({toArabicNumeral(ayat.juz)} : {toArabicNumeral(ayat.numberInSurah)})</h3>
+                            // <h3 className="surat__items-item arab">{ayat.text} ({toArabicNumeral(ayat.juz)} : {toArabicNumeral(ayat.numberInSurah)})</h3>
+                            <div className="surat__items-item">
+                                <h3 className="arab">{ayat.ar}</h3>
+                                <p className='item__idn'>{ayat.nomor}. {ayat.idn}</p>
+                            </div>
                         ))
                     }
                     </div>

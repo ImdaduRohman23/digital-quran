@@ -1,8 +1,6 @@
 .surat {
     padding-top: 70px;
     background-color: #f1f1f2;
-    /* background-color: #2f496e; */
-    /* color: #f4eade; */
 }
 
 .surat__name {
@@ -14,7 +12,6 @@
 }
 
 .surat-container {
-    /* background-color: #2f496e; */
     padding: 50px 20px;
     display: flex;
     flex-direction: column;
@@ -28,8 +25,6 @@
 }
 
 .surat__items {
-    align-self: flex-end;
-    text-align: end;
     width: 100%;
 }
 
@@ -45,4 +40,10 @@
 .surat__items-item:hover {
     background-color:  rgba(102, 255, 255, 30%);
     box-shadow: 0px 0px 2px orange;
+}
+
+.item__idn {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
 }
