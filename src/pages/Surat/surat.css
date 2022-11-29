@@ -23,6 +23,7 @@
 }
 
 .surat__name-arab {
+    padding: 5px;
     text-align: center;
     font-size: 3.5rem;
     text-shadow: 2px 2px 4px rgb(0, 255, 255);
@@ -49,11 +50,32 @@
 
 .surat__items-item:hover {
     background-color:  rgba(102, 255, 255, 30%);
-    box-shadow: 0px 0px 2px orange;
+    box-shadow: 0px 0px 2px rgb(255, 102, 0);
 }
 
 .item__idn {
     font-size: 1rem;
     margin: 0;
     padding: 0;
+}
+
+.surat__pagination {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    box-shadow: 0px 0px 2px #bcbabe;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.surat__pagination-button {
+    border: none;
+    background-color: rgb(255, 102, 0);
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}
+
+.surat__pagination-button:hover {
+    background-color: rgba(255, 102, 0, 70%);
 }

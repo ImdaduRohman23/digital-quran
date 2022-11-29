@@ -10,17 +10,15 @@ const ListSurat = () => {
     const surats = useContext(Surats);
     const navigate = useNavigate();
 
-    function toArabicNumeral(en) {
-        return ("" + en).replace(/[0-9]/g, function(t) {
-            return "٠١٢٣٤٥٦٧٨٩".slice(+t, +t+1);
-        });
-    }
-
-    console.log('diterima', surats)
-
     const handleSurat = (id) => {
         navigate(`/${id}`);
     };
+
+    // function toArabicNumeral(en) {
+    //     return ("" + en).replace(/[0-9]/g, function(t) {
+    //         return "٠١٢٣٤٥٦٧٨٩".slice(+t, +t+1);
+    //     });
+    // }
 
     return (
         <div className="listSurats">
@@ -28,7 +26,7 @@ const ListSurat = () => {
                 <Row className='listSurats__items'>
                     {
                         surats.map(surat => (
-                            <Col key={surat.nomor} lg={4} onClick={() => handleSurat(surat.nomor)}>
+                            <Col key={surat.nomor} sm={6} lg={4} onClick={() => handleSurat(surat.nomor)}>
                                 <div className='listSurats__items-item'>
                                     <h2 className='item__nama'>{surat.nomor}. {surat.nama_latin}</h2>
                                     <h2 className='arab'>{surat.nama}</h2>

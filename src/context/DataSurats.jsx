@@ -15,8 +15,6 @@ const DataSurats = ({children}) => {
         getDataSurats();
     }, []);
 
-    console.log('cek', surats)
-
     return (
         <Surats.Provider value={surats}>
             {children}

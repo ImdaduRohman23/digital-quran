@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
 import Loading from '../../components/Loading/Loading';
 import NavbarComp from '../../components/NavbarComp/NavbarComp';
 import './surat.css';
@@ -9,9 +10,12 @@ import './surat.css';
 const Surat = () => {
     const [surat, setSurat] = useState([]);
     const [ayats, setAyats] = useState([]);
+    const [suratNext, SetSuratNext] = useState([]);
+    const [suratPrev, SetSuratPrev] = useState([]);
     const {id} = useParams();
+    const [idFix, setIdFix] = useState(id);
     const [loading, setLoading] = useState(false);
-    const url__surat = `https://quran-api.santrikoding.com/api/surah/${id}`;
+    const url__surat = `https://quran-api.santrikoding.com/api/surah/${idFix}`;
 
     const getDataSurat = () => {
         setLoading(true);
@@ -19,6 +23,8 @@ const Surat = () => {
             .then(res => {
                 setSurat(res.data);
                 setAyats(res.data.ayat);
+                SetSuratNext(res.data.surat_selanjutnya);
+                SetSuratPrev(res.data.surat_sebelumnya);
                 setLoading(false);
             })
             .catch(err => console.log(err))
@@ -27,13 +33,21 @@ const Surat = () => {
     useEffect(() => {
         getDataSurat();
         // eslint-disable-next-line
-    }, []);
+    }, [idFix]);
 
-    function toArabicNumeral(en) {
-        return ("" + en).replace(/[0-9]/g, function(t) {
-            return "٠١٢٣٤٥٦٧٨٩".slice(+t, +t+1);
-        });
-    }
+    const handlePrev = () => {
+        setIdFix(`${suratPrev.id}`)
+    };
+
+    const handleNext = () => {
+        setIdFix(`${suratNext.id}`)
+    };
+
+    // function toArabicNumeral(en) {
+    //     return ("" + en).replace(/[0-9]/g, function(t) {
+    //         return "٠١٢٣٤٥٦٧٨٩".slice(+t, +t+1);
+    //     });
+    // }
 
     return (
         <div className="surat">
@@ -45,7 +59,7 @@ const Surat = () => {
                         <div className="surat__name">
                             <h1 className='surat__name-arab arab'>{surat.nama}</h1>
                             <h1 className='surat__name-latin'>{surat.nama_latin}</h1>
-                            <p className='surat__name-info'>{surat.tempat_turun} | 7 ayat</p>
+                            <p className='surat__name-info'> {surat.tempat_turun} | {surat.jumlah_ayat} ayat</p>
                         </div>
                         <div className="surat__items">
                         {
@@ -60,11 +74,21 @@ const Surat = () => {
                             ))
                         }
                         </div>
+                        <div className="surat__pagination">
+                            {
+                                !suratPrev? <div></div> :
+                                <button className="surat__pagination-button" onClick={handlePrev}>Sebelumnya</button>
+                            }
+                            {
+                                !suratNext? <div></div> :
+                                <button className="surat__pagination-button" onClick={handleNext}>Selanjutnya</button>
+                            }
+                        </div>
                     </div>
                 </Container>
-
-
             }
+
+            <Footer />
         </div>
     )
 }
