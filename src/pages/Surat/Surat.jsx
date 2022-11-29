@@ -30,23 +30,26 @@ const Surat = () => {
             return "٠١٢٣٤٥٦٧٨٩".slice(+t, +t+1);
         });
     }
-    
+
     return (
         <div className="surat">
             <NavbarComp />
             <Container>
                 <div className="surat-container">
                     <div className="surat__name">
-                        <h1 className='arab'>{surat.nama}</h1>
+                        <h1 className='surat__name-arab arab'>{surat.nama}</h1>
+                        <h1 className='surat__name-latin'>{surat.nama_latin}</h1>
+                        <p className='surat__name-info'>{surat.tempat_turun} | 7 ayat</p>
                     </div>
-                    <hr />
                     <div className="surat__items">
                     {
                         ayats.map(ayat => (
                             // <h3 className="surat__items-item arab">{ayat.text} ({toArabicNumeral(ayat.juz)} : {toArabicNumeral(ayat.numberInSurah)})</h3>
                             <div className="surat__items-item">
+                                <p>{ayat.nomor}</p>
+                                <hr />
                                 <h3 className="arab">{ayat.ar}</h3>
-                                <p className='item__idn'>{ayat.nomor}. {ayat.idn}</p>
+                                <p className='item__idn'>{ayat.idn}</p>
                             </div>
                         ))
                     }

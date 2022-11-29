@@ -1,14 +1,7 @@
 .surat {
     padding-top: 70px;
     background-color: #f1f1f2;
-}
-
-.surat__name {
-    background-color:  rgba(102, 255, 255, 30%);
-    box-shadow: 0px 0px 2px orange;
-    padding: 15px 80px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
+    /* background-color: rgba(0, 0, 0, 5%); */
 }
 
 .surat-container {
@@ -16,25 +9,42 @@
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-
 }
 
 .surat__name {
-    align-self: center;
+    background-color:  white;
+    box-shadow: 0px 0px 2px #bcbabe;
+    width: 100%;
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
     margin-bottom: 30px;
+    color: rgb(255, 102, 0);
 }
 
-.surat__items {
-    width: 100%;
+.surat__name-arab {
+    text-align: center;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px rgb(0, 255, 255);
 }
+
+.surat__name-latin {
+    text-shadow: 2px 2px rgb(0, 255, 255);
+}
+
+.surat__name-info {
+    text-transform: capitalize;
+    margin: 0;
+}
+
 
 .surat__items-item {
     background-color: white;
-    padding: 25px;
+    padding: 20px;
     line-height: 2;
-    margin-bottom: 25px;
-    box-shadow: 0px 0px 5px #bcbabe;
-    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 2px #bcbabe;
+    border-radius: 5px;
 }
 
 .surat__items-item:hover {
