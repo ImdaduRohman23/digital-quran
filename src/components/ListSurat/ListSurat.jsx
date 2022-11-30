@@ -28,7 +28,7 @@ const ListSurat = () => {
                 <Row className='listSurats__items'>
                     {
                         surats.filter((surat) => 
-                            surat.nama_latin.toLowerCase().includes(search)
+                            surat.nama_latin.toLowerCase().includes(search.toLowerCase())
                         ).map((surat) => (
                             <Col key={surat.nomor} sm={6} lg={4} onClick={() => handleSurat(surat.nomor)}>
                                 <div className='listSurats__items-item'>
