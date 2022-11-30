@@ -5,9 +5,11 @@ import Col from 'react-bootstrap/Col';
 import './surats.css';
 import { Surats } from '../../context/DataSurats';
 import { useNavigate } from 'react-router-dom';
+import { Search } from '../../context/DataSearch';
 
 const ListSurat = () => {
     const surats = useContext(Surats);
+    const {search} = useContext(Search);
     const navigate = useNavigate();
 
     const handleSurat = (id) => {
@@ -25,7 +27,9 @@ const ListSurat = () => {
             <Container>
                 <Row className='listSurats__items'>
                     {
-                        surats.map(surat => (
+                        surats.filter((surat) => 
+                            surat.nama_latin.toLowerCase().includes(search)
+                        ).map((surat) => (
                             <Col key={surat.nomor} sm={6} lg={4} onClick={() => handleSurat(surat.nomor)}>
                                 <div className='listSurats__items-item'>
                                     <h2 className='item__nama'>{surat.nomor}. {surat.nama_latin}</h2>

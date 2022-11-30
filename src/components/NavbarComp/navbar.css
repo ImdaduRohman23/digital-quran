@@ -13,4 +13,39 @@
     font-weight: bold;
     /* text-shadow: 3px 3px 3px #ed8c72; */
     font-size: 2rem;
+    margin-right: 10px;
+}
+
+.navbarComp__content {
+    display: flex;
+}
+
+.navbarComp__content-search {
+    background-color: white;
+    display: flex;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.search__input {
+    border: none;
+    padding: 3px;
+    width: 260px;
+}
+
+.search__button {
+    border: none;
+    padding: 3px;
+}
+
+@media only screen and (max-width: 500px) {
+    .search__input {
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 392px) {
+    .search__input {
+        width: 120px;
+    }
 }

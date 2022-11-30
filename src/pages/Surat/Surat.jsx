@@ -36,11 +36,21 @@ const Surat = () => {
     }, [idFix]);
 
     const handlePrev = () => {
-        setIdFix(`${suratPrev.id}`)
+        setIdFix(`${suratPrev.id}`);
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
     };
 
     const handleNext = () => {
-        setIdFix(`${suratNext.id}`)
+        setIdFix(`${suratNext.id}`);
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
     };
 
     // function toArabicNumeral(en) {
@@ -65,7 +75,7 @@ const Surat = () => {
                         {
                             ayats.map(ayat => (
                                 // <h3 className="surat__items-item arab">{ayat.text} ({toArabicNumeral(ayat.juz)} : {toArabicNumeral(ayat.numberInSurah)})</h3>
-                                <div className="surat__items-item">
+                                <div key={ayat.id} className="surat__items-item">
                                     <p>{ayat.nomor}</p>
                                     <hr />
                                     <h3 className="arab">{ayat.ar}</h3>
