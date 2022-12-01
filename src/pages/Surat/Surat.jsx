@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import Loading from '../../components/Loading/Loading';
 import NavbarComp from '../../components/NavbarComp/NavbarComp';
+import Scroll from '../../components/Scroll/Scroll';
 import './surat.css';
 
 const Surat = () => {
@@ -97,7 +98,7 @@ const Surat = () => {
                     </div>
                 </Container>
             }
-
+            <Scroll />
             <Footer />
         </div>
     )
