@@ -27,7 +27,7 @@ const Scroll = () => {
                 toTop &&         
                 <div className="scroll" onClick={handleScroll}>
                     <span className="scroll__value">
-                        &#x1F815;
+                        <i class="fa-solid fa-arrow-up"></i>
                     </span>
                 </div>
             }
