@@ -11,10 +11,10 @@ const NavbarComp = () => {
             <Container>
                 <div className="navbarComp__content">
                     <h1>D'Quran</h1>
-                    <form className="navbarComp__content-search">
+                    <div className="navbarComp__content-search">
                         <input value={context.search} className='search__input' onChange={(e) => context.setSearch(e.target.value) } type="text" placeholder="Cari surat . . ."></input>
                         <button className='search__button'><i className="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
+                    </div>
                 </div>
             </Container>
         </div>
