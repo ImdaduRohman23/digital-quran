@@ -54,6 +54,8 @@ const Surat = () => {
         });
     };
 
+    console.log(surat)
+
     // function toArabicNumeral(en) {
     //     return ("" + en).replace(/[0-9]/g, function(t) {
     //         return "٠١٢٣٤٥٦٧٨٩".slice(+t, +t+1);
@@ -71,6 +73,11 @@ const Surat = () => {
                             <h1 className='surat__name-arab arab'>{surat.nama}</h1>
                             <h1 className='surat__name-latin'>{surat.nama_latin}</h1>
                             <p className='surat__name-info'> {surat.tempat_turun} | {surat.jumlah_ayat} ayat</p>
+                        </div>
+                        <div className="surat__audio">
+                            <audio controls className='surat__audio-item'>
+                                <source src={surat.audio} />
+                            </audio>
                         </div>
                         <div className="surat__items">
                         {
